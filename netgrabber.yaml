@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+        name: netgrab
+        labels:
+                run: tcpdump
+spec:
+        containers:
+                - name: tcpdimper
+                  image: docker.io/dockersec/tcpdump
+                  imagePullPolicy: Always
+                - name: busybox
+                  image: busybox
+                  args:
+                          - sleep
+                          - "10000"
